@@ -3,12 +3,12 @@ this program stores this info
 Title, author, isbn, YEAR
 """
 from tkinter import *
-import backbook
+import bookback
 
 
 def view_command():
     list1.delete(0, END)
-    for row in backbook.view():
+    for row in bookback.view():
         list1.insert(END, row)
 
 
@@ -16,7 +16,6 @@ def search_command():
     list1.delete(0, END)
     for row in backbook.search(title_text.get(), author_text.get(), year_text.get(), isbn_text.get()):
         list1.insert(END, row)
-
 
 window = Tk()
 
