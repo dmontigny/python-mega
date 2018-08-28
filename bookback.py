@@ -5,10 +5,10 @@ from mysql.connector import errorcode
 def create_conn():
     config = {
         'user': 'dmontysql',
-        'password': '37Sunrise',
-        'host': 'us1604',
-        #        'password':'sun37rIse',
-        #        'host':'kermit',
+#        'password': '37Sunrise',
+#        'host': 'us1604',
+         'password':'sun37rIse',
+         'host':'kermit',
         'db': 'pyBase',
         'raise_on_warnings': True,
     }
@@ -108,9 +108,6 @@ def delete(item):
     cur.execute("DELETE FROM books WHERE item=%s", (item,))
     conn.commit()
     conn.close()
-
-def close()
-    pass
 
 # insert('orange', 23, 2.75)
 print(search("The Hobbit", "J.R.R. Tolkein", 1940, 123456))
