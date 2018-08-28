@@ -32,17 +32,26 @@ def search_command():
         list1.insert(END, row)
 
 def add_command():
+    # TODO: Fix the add function - str() object not callable, referring to StringVar()???
     bookback.insert(title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
     list1.delete(0, END)
     list1.insert(END(title_text.get(), author_text.get(), year_text.get(), isbn_text.get()))
 
 def update_command():
-    # TODO: Fix update when list1 is empty
-    bookback.update(selected_tuple[0], title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
+    try:
+        bookback.update(selected_tuple[0], title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
+    except:
+        pass
 
 def delete_command():
-    # TODO: Fix delete when list1 is empty
-    bookback.delete(selected_tuple[0])
+    try:
+        bookback.delete(selected_tuple[0])
+        list1.delete(0, END)
+        for row in bookback.view():
+            list1.insert(END, row)
+
+    except:
+        pass
 
 window = Tk()
 

@@ -3,15 +3,22 @@ from mysql.connector import errorcode
 
 
 def create_conn():
+    from socket import gethostname
+    if gethostname() == 'mint18':
+        password = '37Sunrise'
+        host = 'us1604'
+    elif gethostname() == 'davelx':
+        password = 'sun37rIse'
+        host = 'kermit'
+
     config = {
         'user': 'dmontysql',
-#        'password': '37Sunrise',
-#        'host': 'us1604',
-         'password':'sun37rIse',
-         'host':'kermit',
+        'password': password,
+        'host': host,
         'db': 'pyBase',
         'raise_on_warnings': True,
     }
+
     try:
         cnx = mysql.connector.connect(**config)
     except mysql.connector.Error as err:
@@ -105,12 +112,8 @@ def update(idtitle, title, author, year, isbn):
 def delete(item):
     conn = create_conn()
     cur = conn.cursor()
-    cur.execute("DELETE FROM books WHERE item=%s", (item,))
+    print("DELETE FROM books WHERE idtitle={}".format(item))
+    cur.execute("DELETE FROM books WHERE idtitle={}".format(item))
     conn.commit()
     conn.close()
 
-# insert('orange', 23, 2.75)
-print(search("The Hobbit", "J.R.R. Tolkein", 1940, 123456))
-# print(search("The Hobbit"))
-update(1, "The Hobbit", "J.R.R. Tolkein", 1940, 123456)
-print(view())
