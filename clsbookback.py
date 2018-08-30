@@ -1,10 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
 
-
-
-
-
 class dbbooks:
 
     def __init__(self):
