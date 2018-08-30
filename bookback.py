@@ -35,8 +35,8 @@ TABLES['titles'] = (
     "  `idtitle` INT(11) NOT NULL AUTO_INCREMENT,"
     "  `title` VARCHAR(75),"
     "  `author` VARCHAR(25) NOT NULL,"
-    "  `year` INT(11),"
-    "  `ISBN` INT(11),"
+    "  `year` INT(4),"
+    "  `ISBN` BIGINT(13),"
     "  PRIMARY KEY (`idtitle`)"
     ") ENGINE=InnoDB")
 
