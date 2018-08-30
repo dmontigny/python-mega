@@ -4,17 +4,11 @@ from mysql.connector import errorcode
 
 def create_conn():
     from socket import gethostname
-    if gethostname() == 'mint18':
-        password = '37Sunrise'
-        host = 'us1604'
-    elif gethostname() == 'davelx':
-        password = 'sun37rIse'
-        host = 'kermit'
 
     config = {
         'user': 'dmontysql',
-        'password': password,
-        'host': host,
+        'password': '37Sunrise' if gethostname() == 'mint18' else 'sun37rIse',
+        'host': 'us1604' if gethostname() == 'mint18' else 'kermit',
         'db': 'pyBase',
         'raise_on_warnings': True,
     }
@@ -31,10 +25,6 @@ def create_conn():
         return
     else:
         return cnx
-
-
-#    conn = pymysql.connect("host='us1604' user='dmontysql' passwd='37sunrIse' db='pyBase'")
-#   return conn
 
 db = 'pyBase'
 TABLES = {}

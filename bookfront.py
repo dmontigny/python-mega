@@ -32,10 +32,9 @@ def search_command():
         list1.insert(END, row)
 
 def add_command():
-    # TODO: Fix the add function - str() object not callable, referring to StringVar()???
     bookback.insert(title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
     list1.delete(0, END)
-    list1.insert(END(title_text.get(), author_text.get(), year_text.get(), isbn_text.get()))
+    list1.insert(END, (title_text.get(), author_text.get(), year_text.get(), isbn_text.get()))
 
 def update_command():
     try:
