@@ -2,6 +2,8 @@
 this program stores this info
 Title, author, isbn, YEAR
 """
+
+# TODO: Convert to OOP class
 from tkinter import *
 from clsbookback import dbbooks
 
