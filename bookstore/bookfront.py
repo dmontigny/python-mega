@@ -3,7 +3,8 @@ this program stores this info
 Title, author, isbn, YEAR
 """
 from tkinter import *
-import bookback
+from bookstore import bookback
+
 
 def get_selected_row(event):
     try:

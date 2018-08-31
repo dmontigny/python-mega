@@ -5,7 +5,7 @@ Title, author, isbn, YEAR
 
 # TODO: Convert to OOP class
 from tkinter import *
-from clsbookback import dbbooks
+from bookstore.clsbookback import dbbooks
 
 books = dbbooks()
 
