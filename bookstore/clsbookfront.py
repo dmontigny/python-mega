@@ -8,7 +8,6 @@ from tkinter import *
 from bookstore.clsbookback import dbbooks
 
 books = dbbooks()
-
 def get_selected_row(event):
     try:
         global selected_tuple
