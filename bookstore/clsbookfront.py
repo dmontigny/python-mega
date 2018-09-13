@@ -3,7 +3,7 @@ this program stores this info
 Title, author, isbn, YEAR
 """
 from tkinter import *
-from clsbookback import dbbooks
+from bookstore.clsbookback import dbbooks
 
 books = dbbooks()
 
