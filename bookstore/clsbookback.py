@@ -38,8 +38,8 @@ class dbbooks:
 
         config = {
             'user': 'dmontysql',
-            'password': '37Sunrise' if gethostname() == 'mint18' else 'sun37rIse',
-            'host': 'us1604' if gethostname() == 'mint18' else 'kermit',
+            'password': '37Sunrise' if gethostname() == 'FL51LTHLGX2H2' else 'sun37rIse',
+            'host': 'localhost' if gethostname() == 'FL51LTHLGX2H2' else 'kermit',
             'db': 'pyBase',
             'raise_on_warnings': True,
         }
