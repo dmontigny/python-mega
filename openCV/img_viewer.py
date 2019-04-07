@@ -2,18 +2,20 @@
 
 import cv2
 
+
 def galaxy_pic():
-    img=cv2.imread("images/galaxy.jpg", 0)
+    img = cv2.imread("images/galaxy.jpg", 0)
 
     print(type(img))
     print(img.shape[1])
 
     size_ratio = 3
-    resized_image=cv2.resize(img, (int(img.shape[1]/size_ratio), int(img.shape[0]/size_ratio)))
+    resized_image = cv2.resize(img, (int(img.shape[1]/size_ratio), int(img.shape[0]/size_ratio)))
     cv2.imshow("milky way", resized_image)
     cv2.imwrite("images/galaxy_resized.png", resized_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
 
 def resize_pics():
     import cv2
@@ -30,5 +32,6 @@ def resize_pics():
         cv2.waitKey(500)
         cv2.destroyAllWindows()
         cv2.imwrite("images/resized_" + image[7:], re)
+
 
 resize_pics()
