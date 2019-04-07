@@ -1,8 +1,8 @@
 import cv2
 
-face_cascade = cv2.CascadeClassifier('files/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier("files/haarcascade_frontalface_default.xml")
 
-img = cv2.imread('StrawFest2018.jpg')
+img = cv2.imread("faces/2015_lost.jpg")
 print((img.shape))
 
 grey_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

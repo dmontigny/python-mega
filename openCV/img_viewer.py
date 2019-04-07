@@ -20,7 +20,7 @@ def resize_pics():
     import glob
 
     images = glob.glob("images/*.jpg")
-
+    print(images)
 
     for image in images:
         print(image[7:])
