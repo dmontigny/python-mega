@@ -16,7 +16,7 @@ def load_gal(img_name = 'galaxy.jpg'):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-def change_pix(img_path='sample-images'):
+def change_pix(img_path='images'):
     import glob, os
     os.chdir(img_path)
     for file in glob.glob('*.jpg'):
