@@ -1,5 +1,5 @@
 # https://www.udemy.com/the-python-mega-course/learn/lecture/4775498#content
-"""This app captures video"""
+"""This app captures video and detects motion"""
 
 
 import cv2
@@ -18,6 +18,7 @@ vid = cv2.VideoCapture(0)
 
 def get_frame():
     global fframe
+    global status_list
     check, frame = vid.read()
     status = 0
     grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -45,6 +46,8 @@ def get_frame():
             times.append(datetime.now())
         if status_list[-1] == 0 and status_list[-2] == 1:
             times.append(datetime.now())
+        status_list = status_list[-2:]
+
 
         # cv2.imshow("grey", grey)
         # cv2.imshow("delta", dframe)
