@@ -13,7 +13,8 @@ status_list = [None, None]
 times = []
 df = pandas.DataFrame(columns=["Start", "End"])
 
-vid = cv2.VideoCapture(0)
+# vid = cv2.VideoCapture('rtsp://dmontigny:37sunrIse@192.168.1.230:88')
+vid = cv2.VideoCapture('rtsp://dmontigny:37sunrIse@192.168.1.230:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream')
 
 
 def get_frame():
