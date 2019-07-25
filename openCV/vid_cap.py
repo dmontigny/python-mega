@@ -13,17 +13,18 @@ status_list = [None, None]
 times = []
 df = pandas.DataFrame(columns=["Start", "End"])
 
-vid = cv2.VideoCapture(0)
-# vid = cv2.VideoCapture('rtsp://dmontigny:37sunrIse@192.168.1.230:88')
+vid = cv2.VideoCapture(0)   # logitech C270 webcam
+flips = True
+# vid = cv2.VideoCapture('rtsp://admin:37sunrIse!@192.168.1.30')
 # vid = cv2.VideoCapture('rtsp://dmontigny:37sunrIse@192.168.1.230:88/videostream')
-# RTSP URL rtsp:// [user name][:password]@IP:Port number/videostream
 
 def get_frame():
     global fframe
     global status_list
     check, frame = vid.read()
     # playing with flips
-    frame = cv2.flip(frame, 1)
+    if flips:
+        frame = cv2.flip(frame, 1)
 
     status = 0
     grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
