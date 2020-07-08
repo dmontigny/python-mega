@@ -4,6 +4,7 @@ import json
 
 data = json.load(open("../files/data.json"))
 
+
 con = mysql.connector.connect(
     user = "ardit700_student",
     password = "ardit700_student",
